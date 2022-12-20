@@ -11,13 +11,7 @@ import (
 	"github.com/tabbed/pqtype"
 )
 
-type Author struct {
-	ID   int64          `json:"id"`
-	Name string         `json:"name"`
-	Bio  sql.NullString `json:"bio"`
-}
-
-type Colleaction struct {
+type Collection struct {
 	ID         uuid.UUID             `json:"id"`
 	Slug       string                `json:"slug"`
 	Name       sql.NullString        `json:"name"`

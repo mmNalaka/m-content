@@ -10,12 +10,18 @@ import (
 )
 
 type Querier interface {
+	CreateCollection(ctx context.Context, arg CreateCollectionParams) (Collection, error)
 	CreateUser(ctx context.Context, arg CreateUserParams) (User, error)
+	DeleteCollection(ctx context.Context, id uuid.UUID) (sql.Result, error)
 	DeleteUser(ctx context.Context, id uuid.UUID) (sql.Result, error)
+	GetCollection(ctx context.Context, id uuid.UUID) (Collection, error)
+	GetCollectionBySlug(ctx context.Context, slug string) (Collection, error)
 	GetUser(ctx context.Context, id uuid.UUID) (User, error)
 	GetUserByEmail(ctx context.Context, email string) (User, error)
 	GetUserById(ctx context.Context, id uuid.UUID) (User, error)
+	ListCollections(ctx context.Context) ([]Collection, error)
 	ListUsers(ctx context.Context) ([]User, error)
+	UpdateCollection(ctx context.Context, arg UpdateCollectionParams) (Collection, error)
 	UpdateUser(ctx context.Context, arg UpdateUserParams) (User, error)
 }
 

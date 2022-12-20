@@ -1,4 +1,4 @@
-CREATE TABLE colleactions(
+CREATE TABLE collections(
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
     slug TEXT NOT NULL UNIQUE,
     name TEXT,
