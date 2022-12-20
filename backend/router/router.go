@@ -1,6 +1,9 @@
 package router
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+	"github.com/mmnalaka/m-content/handlers"
+)
 
 func SetupAppRoutes(app *fiber.App) {
 	// app routes
@@ -13,8 +16,8 @@ func SetupAppRoutes(app *fiber.App) {
 
 	// auth routers
 	auth := v1.Group("/auth")
-	auth.Post("/login", PlaceholderHandler)
-	auth.Post("/register", PlaceholderHandler)
+	auth.Post("/login", handlers.AuthLoinHandler)
+	auth.Post("/register", handlers.AuthRegisterHandler)
 	auth.Post("/logout", PlaceholderHandler)
 	auth.Post("/refresh", PlaceholderHandler)
 	auth.Post("/userinfo", PlaceholderHandler)
