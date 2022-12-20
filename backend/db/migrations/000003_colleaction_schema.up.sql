@@ -4,7 +4,7 @@ CREATE TABLE collections(
     name TEXT,
     notes TEXT,
     singleton BOOLEAN DEFAULT FALSE NOT NULL,
-    schema JSON NOT NULL,
+    schema JSON NOT NULL DEFAULT '[]'::JSON,
 
     listRule TEXT,
     viewRule TEXT,

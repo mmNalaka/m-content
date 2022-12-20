@@ -35,7 +35,7 @@ func SetupAppRoutes(app *fiber.App) {
 	cma := v1.Group("/cma", JWTProtected())
 	cma.Get("/collections", PlaceholderHandler)
 	cma.Get("/collections/:id", PlaceholderHandler)
-	cma.Post("/collections", PlaceholderHandler)
+	cma.Post("/collections", handlers.CreateCollection)
 	cma.Put("/collections/:id", PlaceholderHandler)
 	cma.Delete("/collections/:id", PlaceholderHandler)
 }
